@@ -1,48 +1,39 @@
 # Data Visualization Project
 
-## Data
+## NBA Data
 
-The data I propose to visualize for my project is ...
+The data I propose to visualize for my project is my 2023/24 NBA Season dataset 
 
 
 ## Questions & Tasks
 
 The following tasks and questions will drive the visualization and interaction decisions for this project:
 
- * (insert your question or task here) How does the X vary over time?
- * (insert your question or task here) Is there any correlation between X and Y?
- * (insert your question or task here) Are there interesting spatial patterns in X?
- * (insert your question or task here) How many X are there across different Y?
+1. Create a correlation matrix between all of the statistics tracked to find relations
+2. Find the best players in the league based on offensive stats
+3. Find the best players in the league based on defensive stats
+4. Find the relationship between minutes played and points per game and see who ranks above the rest
+5. See if there is a postive/upward trending relationship between ORB and FTA or DRB and AST as the two statistics should be heavily related with the way the game is played
+
 
 ## Sketches
 
-(insert one or more hand-drawn sketches of interactive visualizations that you imagine)
-(describe each sketch - how is the data visualized, what are the interactions, and how do these relate to the questions/tasks)
+![image](https://github.com/user-attachments/assets/9f8d45ce-9a2a-4498-912c-ca384eac8a92)
 
+The above image is a radar chart which I plan to use to map out offensive and defensive stats for players comparatively. I aim to use these to not only compare players head-to-head but also to see where specific players excel compared to the general "top" players in the league.
+
+![image](https://github.com/user-attachments/assets/2b70983a-a29d-4642-8593-b8476efffb23)
+
+This sketch of a stacked bar chart is going to be used for offensive and defensive statistics as well, but more so to see a smaller subset of statistics combined. On both sides of the ball there is generally a "Big 3" of stats, those being points, assists, and rebounds, but I want to focus on just offense and just defense as well to really separate players as well. So I plan to make this with those 3 previously mentioned as well as points, assists, and eFG% for offense, and steals, blocks, and rebounds for defense.
 
 ## Prototypes
 
-I’ve created a proof of concept visualization of this data. It's a ... and it shows ...
-
-[![image](https://user-images.githubusercontent.com/68416/65240758-9ef6c980-daff-11e9-9ffa-e35fc62683d2.png)](https://vizhub.com/curran/eab039ad1765433cb51aad167d9deae4)
-
-(please put a screenshot of one or more visualizations of this dataset you already made, for previous assignments, and link to them)
-
-You can put images into here by pasting them into issues.
-
-You can make images into links like this:
-
-```
-[![image](https://user-images.githubusercontent.com/68416/65240758-9ef6c980-daff-11e9-9ffa-e35fc62683d2.png)](https://vizhub.com/curran/eab039ad1765433cb51aad167d9deae4)
-```
-
-
-Also, you can study the [source](https://raw.githubusercontent.com/curran/dataviz-project-template-proposal/master/README.md) to figure out Markdown formatting. You can use the GitHub built-in editor to edit the document.
+I’ve created a proof of concept visualization of this data. It's just a quick mock up of the radar chart made with Python graphing libraries. I made it to show the 'top 15' offensive players with a normalization applied to ensure that each axis is equal.
 
 ## Open Questions
 
-(describe any fear, uncertainty, or doubt you’re having about the feasibility of implementing the sketched system. For example, “I’m not sure where to get the geographic shapes to build a map from this data” or “I don’t know how to resolve the codes to meaningful names” … Feel free to delete this section if you’re confident.)
+I am unsure of how well I can continue to plot the FG% numbers with the rest of the data as the numbers for those are all 0-1 and would be rather hard to normalize well. The radar chart mockup I made does it in an alright fashion but I want to see if I can make it better or even just plot them together to make it a non-issue and even create a new visualization for the best shooters in the league. This gave me a new idea!!
 
 ## Milestones
 
-(for each week, estimate what would be accomplised)
+Unsure of what the milestones look like. Will likely just follow assignment guidelines and due dates, but hoping to create a minimum of a polished visualization a week! Going to start with the stacked bar charts and move on to the radar charts once I'm feeling more comfortable with the dataset in general and have developed a solid normalization scheme for the %'s.
