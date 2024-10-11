@@ -28,7 +28,13 @@ This sketch of a stacked bar chart is going to be used for offensive and defensi
 
 ## Prototypes
 
+![image](https://github.com/user-attachments/assets/9348bd12-375b-4a06-bc91-0aa483d6dad3)
+
 I’ve created a proof of concept visualization of this data. It's just a quick mock up of the radar chart made with Python graphing libraries. I made it to show the 'top 15' offensive players with a normalization applied to ensure that each axis is equal.
+
+![image](https://github.com/user-attachments/assets/afe368bb-f67c-454d-a0ba-99a935842742)
+
+I also made this which is a visualization of the initial version of the second sketch above.
 
 ## Open Questions
 
