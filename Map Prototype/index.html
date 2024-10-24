@@ -1,0 +1,55 @@
+<!-- Done entirely by ChatGPT and Gemini as I don't love doing HTML by hand due to syntax -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      NBA Team Locations and Player Statistics (2023-2024)
+    </title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="index.js" defer></script>
+    <script src="viz.js" defer></script>
+    <style>
+      body {
+        margin: 0;
+        background: white;
+        font-family: sans-serif;
+        display: flex;
+      }
+      svg {
+        width: 70%; /* Adjust to leave space for the selector */
+        height: 100vh;
+        background-color: white;
+      }
+      text {
+        font-size: 12px;
+        fill: black;
+        font-family: sans-serif;
+      }
+      #team-selector {
+        width: 30%;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        overflow-y: auto;
+        border-left: 2px solid black;
+        box-sizing: border-box;
+      }
+      #team-options {
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <svg></svg>
+    <div id="team-selector">
+      <strong>NBA Teams:</strong><br />
+      <div id="team-options"></div>
+    </div>
+  </body>
+</html>
