@@ -55,3 +55,5 @@ How can I take the players and organize them by team to visualize team and regio
 10/10: Created this branch, had initial sketches and a few pseudo visualizations created. Direction of final visualizations established and plans laid out.
 
 10/24: Iterated on the psuedo visualizations. Added an idea to visualize 'team statistics' on a map as a result of the map assignment and added a sketch. Work on that to follow.
+
+10/31: Iterated on the radar chart. Made it a little easier to view and read the statistics. Sadly need each axis to be normalized otherwise the data looks ridiculous and it is impossible to read. Added a better legend which is now able to be interacted with as well! Also fixed the dataset path so anyone can run it and interact easily.
