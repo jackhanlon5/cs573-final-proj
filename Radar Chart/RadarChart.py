@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from sklearn.preprocessing import MinMaxScaler
 
 # Load data
-df = pd.read_csv('E:/CS573 - Data Viz/datasets/nba_player_data.csv')
+df = pd.read_csv('cs573-final-proj/datasets/nba_player_data.csv')
 
 # Select relevant stats
 stats = ['PTS', 'FG%', '3P%', 'eFG%', 'FT%', 'AST']
