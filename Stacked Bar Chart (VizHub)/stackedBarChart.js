@@ -26,13 +26,14 @@ export const stackedBarChart = (selection, props) => {
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
+  // Use data directly as it's already filtered and sorted in index.js
   const xScale = scaleBand()
     .domain(data.map(xValue))
     .range([0, innerWidth])
     .padding(0.2);
 
   const yScale = scaleLinear()
-    .domain([0, 14]) // Y-axis ticks restored with a max value of 14
+    .domain([0, 14]) // Adjust this based on your data's max value
     .nice()
     .range([innerHeight, 0]);
 
@@ -50,15 +51,17 @@ export const stackedBarChart = (selection, props) => {
       `translate(${margin.left},${margin.top})`,
     );
 
-  const filteredData = filteredValue
-    ? [...data].sort(
-        (a, b) => b[filteredValue] - a[filteredValue],
-      )
-    : [...data];
+  // Remove redundant data filtering
+  // const filteredData = filteredValue
+  //   ? [...data].sort(
+  //       (a, b) => b[filteredValue] - a[filteredValue],
+  //     )
+  //   : [...data];
 
+  // Use data directly in stackedData
   const stackedData = stack().keys(
     filteredValue ? [filteredValue] : yValues,
-  )(filteredData);
+  )(data);
 
   // Create a tooltip element
   const tooltip = select('body')
@@ -94,7 +97,11 @@ export const stackedBarChart = (selection, props) => {
       tooltip
         .style('visibility', 'visible')
         .html(
-          `Value: ${filteredValue ? d.data[filteredValue] : (d[1] - d[0] + 0.01).toFixed(1)}`,
+          `Value: ${
+            filteredValue
+              ? d.data[filteredValue]
+              : (d[1] - d[0] + 0.01).toFixed(1)
+          }`,
         ); // Display the bar value
     })
     .on('mousemove', (event) => {
@@ -107,8 +114,14 @@ export const stackedBarChart = (selection, props) => {
       tooltip.style('visibility', 'hidden');
     });
 
+  // Remove existing axes and labels before adding new ones
+  g.selectAll('.x-axis').remove();
+  g.selectAll('.y-axis').remove();
+  g.selectAll('.axis-label').remove();
+
   // Add X Axis
   g.append('g')
+    .attr('class', 'x-axis')
     .attr('transform', `translate(0,${innerHeight})`)
     .call(axisBottom(xScale))
     .selectAll('text')
@@ -119,11 +132,13 @@ export const stackedBarChart = (selection, props) => {
     .style('text-anchor', 'end');
 
   // Add Y Axis
-  g.append('g').call(axisLeft(yScale)); // Restored Y-axis with ticks
+  g.append('g')
+    .attr('class', 'y-axis')
+    .call(axisLeft(yScale));
 
   // X Axis Label
   g.append('text')
-    .attr('class', 'axis-label')
+    .attr('class', 'axis-label x-axis-label')
     .attr('x', innerWidth / 2)
     .attr('y', innerHeight + margin.bottom - 10)
     .attr('text-anchor', 'middle')
@@ -131,7 +146,7 @@ export const stackedBarChart = (selection, props) => {
 
   // Y Axis Label
   g.append('text')
-    .attr('class', 'axis-label')
+    .attr('class', 'axis-label y-axis-label')
     .attr('x', -innerHeight / 2)
     .attr('y', -margin.left + 15)
     .attr('text-anchor', 'middle')

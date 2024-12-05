@@ -44,7 +44,7 @@ I also made this which is a visualization of the initial version of the second s
 
 This is a quick mockup I made for the map assignment, plan to further imnprove on it!
 
-## Current Visualization Iterations
+## Final Visualization Iterations
 
 ![image](https://github.com/user-attachments/assets/5a410260-6076-44a5-8898-3110d6aa5414)
 
@@ -54,23 +54,27 @@ Here is the most up to date iteration of my radar chart for the top 15 offensive
 
 Interestingly, this is the same radar chart but built with a completely different plotting library in Python! Dash was able to do so much more for me in terms of filtering than plotyl could so I needed to swap in order to make my offensive comparison radar chart work out! This one allows for the comparison of players head-to-head using the same format as before so it's much less limited in terms of who it can display at the cost of it being 2 at a time. Great for weighing players against each other in a vacuum which is something NBA fans do a little too often!
 
-![image](https://github.com/user-attachments/assets/7350982c-1de5-45a1-b237-19b73c58f2f8)
+![image](https://github.com/user-attachments/assets/011b65d3-299e-4cb3-a5d8-67ef68369a10)
 
 This is the most up to date version of the bubble chart which turned into my stacked bar chart! Really like how it came together as it's very simple but tells a great story with such little relative information. I believe that the colors, which not incredibly cohesive, do their jobs in highlighting which portion of their combined statistics come from which stat and show just how much of an impact a player can make from just one really strong category, such as Nic Claxton with significantly higher blocks than those around him, or even Jokic with so many steals compared to the other top 5 defensive players.
 
-![image](https://github.com/user-attachments/assets/8247a944-c9f9-4631-85bb-1be6305f9ba8)
+![image](https://github.com/user-attachments/assets/ae24e619-a85a-4e3f-bf20-83e5836dde3b)
 
-Finally this is where the map stands. I haven't been able to get this working well as trying to line up all of the pieces has been a surprisingly difficult challenge and I haven't enjoyed it as it's been rather frustrating. Future work has more information on it, very in need of ideas and suggestions!
+Finally this is where the map stands! Was very unhappy with this beforehand but I sat dowqn and chipped at it for an afternoon and got it to this point! Very exicted with it.
 
 ## Open Questions
 
 I am unsure of how well I can continue to plot the FG% numbers with the rest of the data as the numbers for those are all 0-1 and would be rather hard to normalize well. The radar chart mockup I made does it in an alright fashion but I want to see if I can make it better or even just plot them together to make it a non-issue and even create a new visualization for the best shooters in the league. This gave me a new idea!!
+    ^ Didn't get to make this chart but this is a great thing to get the True Shooting stat for as well as the offensive stacked bar chart edition
 
 How can I take the players and organize them by team to visualize team and region data? Sketches above!
+    ^ This was solved!
 
 ## Future Work
 
-I am sad to report that I don't think the map visualization will be getting any more love without some serious assistance. It didn't pan out how I had hoped and there were so many moving pieces that I struggled to really get everything onto the vis cohesively. I also ran into some graphing issues with numerous teams in the same or very similar locations which lead to some overlap and I couldn't think of a solution that really satisfied me for those. I would love to revisit this and see if I could get that going another time, but for now I think I would need to go with some sort of tabular or graphical vis to make it work with the time left. Very very open to suggestions and ideas here please as I really want to do this before the semester is over!
+Map Vis: Fix Memphis! Unsure how to normalize them due to the amount of players listed on the team due to injuries.
+Stacked Bar Chart: Make an offensive version, add more stats, etc.
+Radar Chart: Make a defensive version, find a better normalization function for the shooting percentages, find a way to handle Luke Kornet.
 
 ## Milestones
 
@@ -86,4 +90,10 @@ I am sad to report that I don't think the map visualization will be getting any 
 
 11/22: Had a rough week with some assignments and work and was unable to really do much or submit a check in. Tried to get some work done on my map idea but was unable to get anything good going or get a solid solution for any of the glaring issues I was having so I decided to move away from it and get back into my radar chart, which was one plan for the final few weeks.
 
-11/29 iterated heavily on the radar chart. Made no visual changes to it as I felt like it was as nice as it was going to get in that regard. but I did make a change to how I can display the data by changing it into a comparison tool! I went in the direction of head-to-head comparisons by overlaying a players stat's with another since this is something that fans do all the time when looking at players for OPOY and MVP all the time. I did something similar by normalizing the defensive stacked bar chart to get a better comparison going on that visualization, which is what really spurred the idea here for a comparison based vis. Couldn't get it to flow properly with ploty so I sadly had to have ChatGPT help me shift things to Dash which I had never used before, but it worked beautifuly after!
+11/29: Iterated heavily on the radar chart. Made no visual changes to it as I felt like it was as nice as it was going to get in that regard. but I did make a change to how I can display the data by changing it into a comparison tool! I went in the direction of head-to-head comparisons by overlaying a players stat's with another since this is something that fans do all the time when looking at players for OPOY and MVP all the time. I did something similar by normalizing the defensive stacked bar chart to get a better comparison going on that visualization, which is what really spurred the idea here for a comparison based vis. Couldn't get it to flow properly with ploty so I sadly had to have ChatGPT help me shift things to Dash which I had never used before, but it worked beautifuly after!
+
+12/4: Final submission! Fixed up and polished a few things:
+    1) Got the axis issue fixed for the stacked bar chart. Looks better now too as the names are very clear compared to before, I think I had a big issue with the text stacking on itself upon loading.
+    2) I fixed the map! huge improvements from before and I'm so happy with how it turned out. Please go take a look at it as it's fantastic now! Visuals above!
+
+Take a look through all of my commits to see where my project really started and where it has ended up!

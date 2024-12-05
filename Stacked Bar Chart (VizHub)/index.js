@@ -1,4 +1,4 @@
-import { csvParse, select } from 'd3';
+import { csvParse, select, scaleOrdinal } from 'd3';
 import { stackedBarChart } from './stackedBarChart';
 import { colorLegend } from './colorLegend';
 import { data } from '@jackhanlon5/4770362d5ec5458f8ff8dc01878d22a4';
@@ -67,8 +67,7 @@ export const main = (container, { state, setState }) => {
   });
 
   svg.call(colorLegend, {
-    colorScale: d3
-      .scaleOrdinal()
+    colorScale: scaleOrdinal()
       .domain(['STL', 'BLK', 'DRB'])
       .range(['#1f77b4', '#ff7f0e', '#2ca02c']),
     colorLegendLabel: 'Stats Type',
